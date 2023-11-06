@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CMDb Community Web</title>
+    <link type="text/css" rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="icon/favicon.ico">
+    <script type="text/javascript" src="js/navToggle.js"></script>
+    <script type="module" src="js/postReview.js"></script>
+    <script type="module" src="js/movieDetails.js"></script>
+    <script type="module" src="js/scoreRate.js"></script>
+    <script type="module" src="js/apiCalls.js"></script>
+    <script type="module" src="js/search.js"></script>
+    <script type="module" src="js/filter&searchResults.js"></script>
+    <script src="https://kit.fontawesome.com/590228b404.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <header> 
+        <a href="index.html" class="active"> <img src="img/CMDb_logo.png" alt="CMBb:s logga" width="200" class="logo"></a>     
+    </header>
+
+    <nav>
+        <div class="hamburger">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+
+        <ul class="navigation">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="search.html">Search</a></li>
+            <li><a href="aboutUs.html">About us</a></li>
+        </ul> 
+
+        <div class = "search-container">
+            <input type = "text"  id = "movie-search-box"  
+            placeholder="Search Movie Title ..." >
+            <button id="searchbutton" class="search-button">
+                <img src="img/search.png" alt="A image of a magnifying glass" width="20" class="search-icon">
+            </button>
+            <div class = "search-list" id = "search-list"></div>
+    </div>   
+    </nav>
+
+ 
+
+   
+    <main class="flex-movie-info">
+        <section class="infoAndRating flex-item">
+            <div class="info-movie"></div>
+
+            <section class="see-rating-section"> 
+                <h1>Rating</h1>
+                <div class="otherRatings"></div>
+
+                <div class="cmdb-rating">
+                <h2>Cmdb rating</h2>
+                <p class="rating-number" id="number"></p>
+                <ul class="ratingline">
+            
+                    <li>
+                        <div id="red-rating"></div>
+                    </li>
+
+                    <li>
+                        <div id="orange-rating"></div>
+                    </li>
+
+                    <li>
+                        <div id="lightgreen-rating"></div>
+                                    
+                    </li>
+
+                    <li>
+                        <div id="green-rating"></div>                
+                    </li>   
+                </ul>
+
+                <div id="rating-stroke"></div>  
+                 <!-- den vita linjen -->
+                
+                <p class="votes"></p>
+                <span class="counts" id="greentext">0 votes</span> 
+                <div class="green-vote"> <span class="number">4</span></div> 
+
+                <span class="counts" id="lightgreentext">0 votes</span> 
+                <div class="lightgreen-vote" id="lightgreentext"><span class="number">3</span></div>
+
+
+                <span class="counts" id="orangetext">0 votes</span> 
+                <div class="orange-vote" id="orangetext"> <span class="number">2</span></div>
+
+
+                <span class="counts" id="redtext">0 votes</span> 
+                <div class="red-vote" > <span class="number">1</span> </div> 
+                </div>
+            </section>
+
+            <section class="set-rating-detailpage">
+                <h1 id="rateMovieHeadline">Rate movie</h1>
+                <div class="rating">
+                    <ul>
+                        <li><a href="#" class="_1">1</a></li>
+                        <li><a href="#" class="_2">2</a></li>
+                        <li><a href="#" class="_3">3</a></li>
+                        <li><a href="#" class="_4">4</a></li>
+                    </ul>
+                </div>  
+            </section>
+        </section>
+
+        <section class="review flex-item">
+            <h1>Reviews</h1>
+            <button id="prevReviews"><i class="fa-solid fa-circle-left"></i> Prev</button>
+            <button id="nextReviews">Next <i class="fa-solid fa-circle-right"></i></button>
+            <div class="read-review">
+           
+            </div>
+         
+
+            <div class="write-review">
+                <h1>Publish review</h1>
+                <form  id="review-form" name="writeReview" class="contactUs">
+               
+                    <div class="form-group">
+                        <label for="firstName">Name*</label>
+                        <input type="text" id="name" name="firstname" placeholder="Name...">
+                    </div> 
+                    <div class="form-group">
+                        <label for="review">Review*</label>
+                        <textarea id="review" name="review" placeholder="Write review here..."></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="score">Score*</label>
+                        <select id="score" name="score">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                        </select>
+                        <p id="rating-message"></p>
+                    </div>
+
+                   <input name="submit" id="publish-button" type="button" value="Publish"> 
+                </form>
+                
+            </div>
+            
+            <div id="review-success-message"></div>
+        </section>
+    </main>
+
+
+
+    <aside class="flex-posters">
+
+    </aside>
+
+
+    <footer>
+        <div class="social-media"> 
+            <i class="fa-brands fa-facebook"></i>
+            <i class="fa-brands fa-instagram"></i>
+            <i class="fa-brands fa-tiktok"></i>
+            <i class="fa-brands fa-youtube"></i>
+        </div>
+
+        <span id="email">Email: info@cmdbfilm.com</span>     
+        <span id="copyright"><i class="fa-regular fa-copyright"></i> 2023 CMDB Film</span>
+    </footer>
+    
+</body>
+</html>

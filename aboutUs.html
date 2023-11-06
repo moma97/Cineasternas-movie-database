@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CMDb Community Web</title>
+    <link type="text/css" rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="icon/favicon.ico">
+    <script type="text/javascript" src="js/navToggle.js"></script>
+    <script type="module"  src="js/search.js"></script>
+    <script type="module" src="js/filter&searchResults.js"></script>
+    <script src="https://kit.fontawesome.com/590228b404.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <header> 
+        <a href="index.html" class="active"> <img src="img/CMDb_logo.png" alt="CMBb:s logga" width="200" class="logo"></a>
+        </div>    
+    </header>
+
+    <nav>
+        <div class="hamburger">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+
+        <ul class="navigation">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="search.html">Search</a></li>
+            <li><a href="aboutUs.html" class="active">About us</a></li>
+        </ul> 
+
+        <div class = "search-container">
+            <input type = "text"  id = "movie-search-box"  
+            placeholder="Search Movie Title ..." >
+            <button id="searchbutton" class="search-button">
+                <img src="img/search.png" alt="A image of a magnifying glass" width="20" class="search-icon">
+            </button>
+            <div class = "search-list" id = "search-list"></div>
+    </div>     
+    </nav>
+
+    <main id="grid-container-aboutUs">
+
+        <section class="weAre flex-item-aboutUs">
+            <h1><img src="img/CMDb_logo.png" alt="A image of CMBb:s logo" width="100" class="logo">  About us</h1> 
+            <p>We at CMDB Film are passionate about the world of cinema, and our mission is to share this passion with 
+                film enthusiasts all over the world. Our site is created with a simple vision: to provide a platform where 
+                film lovers like you can explore an extensive collection of movies, receive recommendations for new and 
+                exciting films, and share your own cinematic experiences with fellow enthusiasts.</p>
+        </section>
+
+        <section class="contactForm flex-item-aboutUs">
+            <h1>Contact form</h1>
+            <form class="contactUs">
+                <div class="form-group">
+                    <label for="firstName">First name</label>
+                    <input type="text" id="firstName" name="firstname" placeholder="First name...">
+                </div>
+                <div class="form-group">
+                    <label for="lastName">Last name</label>
+                    <input type="text" id="lastName" name="lastname" placeholder="Last name...">
+                </div>
+                <div class="form-group">
+                    <label for="mail">Email</label>
+                    <input type="email" id="mail" name="email" autocomplete="email" placeholder="Email...">
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phonenumber</label>
+                    <input type="number" id="phone" name="phone" autocomplete="tel-national" placeholder="Phonenumber...">
+                </div>
+                <div class="form-group">
+                    <label for="subject">Message</label>
+                    <textarea id="subject" name="subject" placeholder="Write a message..."></textarea>
+                </div>
+                <input type="submit" value="Submit">
+            </form>
+        </section>   
+
+        <article class="followUs flex-item-aboutUs">
+            <h1>Follow us</h1>
+            <div class="facebook">
+                <h3>Facebook</h3>
+                <img class="movies" src="img/movies.jpg" alt="A movie collage"/>
+                <img class="facebook-logo" src="img/facebook_logo.png" alt="Facebook logo"/>
+            </div>
+
+            <div class="youtube">
+                <h3>Youtube</h3>
+                <img class="film-shooting" src="img/filmShooting.jpg" alt="Movie clapboard"/>
+                <i class="fa-brands fa-youtube"></i>
+            </div>
+
+            <div class="instagram">
+                <h3>Instagram</h3>
+                <img class="film-reel" src="img/filmReel.jpg" alt="Film reels"/>
+                <img class="instagram-logo" src="img/instagram_logo.png" alt="Instagram logo"/>
+            </div>
+        </article>   
+    </main>
+
+
+    <footer>
+        <div class="social-media"> 
+            <i class="fa-brands fa-facebook"></i>
+            <i class="fa-brands fa-instagram"></i>
+            <i class="fa-brands fa-tiktok"></i>
+            <i class="fa-brands fa-youtube"></i>
+        </div>
+
+        <span id="email">Email: info@cmdbfilm.com</span>     
+        <span id="copyright"><i class="fa-regular fa-copyright"></i> 2023 CMDB Film</span>
+    </footer>
+    
+</body>
+</html>

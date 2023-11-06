@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CMDb Community Web</title>
+    <link type="text/css" rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="icon/favicon.ico">
+    <script type="text/javascript" src="js/navToggle.js"></script>
+    
+    <script type="module" src="js/movieDetails.js"></script>
+    <script type="module" src="js/scoreRate.js"></script>
+    <script type="module" src="js/apiCalls.js"></script>
+    
+    <script type="module" src="js/filter&searchResults.js"></script>
+  
+    <script src="https://kit.fontawesome.com/590228b404.js" crossorigin="anonymous"></script>
+  
+</head>
+
+<body>
+
+  <header> 
+    <a href="index.html" class="active"> <img src="img/CMDb_logo.png" alt="CMBb:s logga" width="200" class="logo"></a>
+  </header>
+
+    <nav>
+        <div class="hamburger">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+
+        <ul class="navigation">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="search.html" class="active">Search</a></li>
+            <li><a href="aboutUs.html">About us</a></li>
+        </ul> 
+    </nav>
+ 
+    
+    <div id="flex-content-search">
+      
+        <section class="search-filter flex-item onlysearchpage"> 
+            <h1>Search filter</h1>
+            <div class = "search-container">
+              <div class = "search-element">
+                  <input type = "text" class = "form-control" id = "movie-search-box" 
+                  placeholder="Search Movie Title ...">
+                  <button id="searchbutton" class="search-button"><img src="img/search.png" alt="A image of a magnifying glass" width="20" class="search-icon"></button>
+                  <div class = "search-list onlysearchpage" id = "search-list"></div>
+              </div>
+              
+          </div> 
+            
+
+            <div id="grid-container-search-filter">
+                <div id="genres">
+                    <h4>Genre</h4>
+                 <select name="select"  title="select" id="genre">
+                  <option disabled selected>-</option>
+                  <option>Action</option>
+                  <option>Animerat</option>
+                  <option>Barnfilm</option>
+                  <option>Dokumentärer</option>
+                  <option>Draman</option>
+                  <option>Fantasy</option>
+                  <option>Klassiker</option>
+                  <option>Komedier</option>
+                  <option>Kriminalare</option>
+                  <option>Musikaler</option>
+                  <option>Romantik</option>
+                  <option>Sci-fi</option>
+                  <option>Skräck</option>
+                  <option>Thriller</option>
+                 </select>
+
+                </div>
+                <div id="release-year">
+                    <h4>Release year</h4>
+                    <form class="year">
+                   
+                      <div class="form-group">
+                        <label for="startYear">From: </label>
+                        <input type="tel" maxlength="4" id="startYear" name="startYear" value="" pattern="\d{4}" title="Please enter a four-digit year"placeholder="ex. 2010">
+                        
+                      </div>
+                      <div class="form-group">
+                        <label for="endYear">To: </label>
+                        <input type="tel" maxlength="4" id="endYear" name="endYear" value="" pattern="\d{4}" title="Please enter a four-digit year"placeholder="ex. 2013">
+                      </div>  
+                    </form>
+                </div>
+
+
+                <div id="CMDb-score">
+                    <h4>CMDb Score</h4>
+                    <select name="scoreselect" title="select" id="scorefilter">
+                      <option disabled selected>-</option>
+                      <option>4</option>
+                      <option>3</option>
+                      <option>2</option>
+                      <option>1</option>
+                    </select>
+                </div>
+
+                <div id="movie-runtime">
+                    <h4>Maximum runtime</h4>
+                    <select name="select-runtime" id="select-runtime">
+                      <option disabled selected>-</option>
+                      <option>30 min</option>
+                      <option>1 h</option>
+                      <option>1 h 30 min</option>
+                      <option>2 h</option>
+                      <option>2 h 30 min</option>
+                      <option>3 h</option>
+                    </select>
+                </div>
+            </div>
+        </section>
+
+        <section class="search-result flex-item">
+            <div class="searchResultheadings clearfix" >
+              <h1>Search result</h1>
+              <h3 id="yoursearch">Your search: </h3>
+            </div>
+            
+
+            
+            <div id="movie-results">
+              <div class="result1 clearfix" style="display: none;">
+               
+                <div class="movie-poster">
+                  <a href="#" target="_blank"> <img src="#" alt="#"/></a>
+                </div>
+                <div class="movie-summary">
+                  <h4 class="movie-title"></h4>
+                  <p class="plot"></p>
+                  <p class="genre"></p>
+                  <p class="runtime"></p>
+                  <p class="Cmdb-score"></p>
+                </div>
+              </div>
+
+              <div class="result2 clearfix" style="display: none;">
+                <div class="movie-poster">
+                  <a href="#" target="_blank"> <img src="#" alt="#"/></a>
+                </div>
+                <div class="movie-summary">
+                  <h4 class="movie-title"></h4>
+                  <p>
+                    
+                  </p>
+                </div>
+              </div>
+            </div>
+              
+        </section>
+
+        <section class="topp-search flex-item">
+            <h3>Most recent searches</h3>
+            <div id="topp-today-search">
+              <p><span class="topp-search-number">1.</span> Extraction <span class="type"></span></p>
+            
+            </div>
+        </section>
+    </div>
+
+    <footer>
+      <div class="social-media"> 
+          <i class="fa-brands fa-facebook"></i>
+          <i class="fa-brands fa-instagram"></i>
+          <i class="fa-brands fa-tiktok"></i>
+          <i class="fa-brands fa-youtube"></i>
+      </div>
+
+      <span id="email">Email: info@cmdbfilm.com</span>     
+      <span id="copyright"><i class="fa-regular fa-copyright"></i> 2023 CMDB Film</span>
+  </footer>
+    
+</body>
+</html>
