@@ -1,71 +1,52 @@
 import { ratedMovies } from "./scoreRate.js"; 
-import {getMoviesCmdb, scoreMovieWithReturn, getMovieOmdb, getMovieOmdbShortPlot, scoreMovie, getMovieOmdbFullPlot, latestReview, searchForMoviesOmdb, getMoviesCmdbPaging, cmdbScoreFilter, getMoviesByGenre, getMovieDetailsFromCMDB} from './apiCalls.js';
+import {getMoviesCmdb, scoreMovieWithReturn, getMovieOmdb, getMovieOmdbShortPlot, scoreMovie, getMovieOmdbFullPlot, latestReview, searchForMoviesOmdb, getMoviesCmdbPaging, cmdbScoreFilter, getMoviesByGenre, getMovieDetailsFromCMDB, searchForMoviesOmdbFilter} from './apiCalls.js';
 
 
-const messageSearchResult = document.getElementById('yoursearch');
+
 const searchBox = document.getElementById('movie-search-box');
 const searchButton = document.getElementById('searchbutton')
 const movieResults = document.getElementById('movie-results');
 const searchList = document.getElementById('search-list');
 
-// #region Event listeners
-
-    window.onload = function() {
-        const searchTerm = localStorage.getItem('searchValue');
-     if (searchTerm && window.location.href.includes('search.html')) {
-        loadMovies(searchTerm);
-      }
-     };
 
 
 //VID ENTER PÅ INEDEX, func displayMovieList();
+window.onload = performSearchOnLoad;
 
-searchBox.addEventListener('keyup', function(event) {
-    const searchTerm = event.target.value.trim();   
-      // Perform the search
-        findMoviesSearchBar(searchTerm)
-    });
 // Event listener for the search button
 searchButton.addEventListener('click', function() {
-    performSearch();
-    });
+    const searchTerm = searchBox.value.trim();
+    if (searchTerm) {
+        localStorage.setItem('lastSearchTerm', searchTerm);
+        // Redirect to 'search.html' with the search term as a query parameter
+        window.location.href = 'search.html?searchTerm=' + encodeURIComponent(searchTerm);
+    }
+});
     
-    // Event listener for the search box
-    searchBox.addEventListener('keyup', function(event) {
+searchBox.addEventListener('keyup', function(event) {
     // Check if the key that was pressed was Enter
     if (event.key === 'Enter') {
-        performSearch();
+        const searchTerm = searchBox.value.trim();
+        if (searchTerm) {
+            // If the search box has a value, perform the search
+            localStorage.setItem('lastSearchTerm', searchTerm);
+            window.location.href = 'search.html?searchTerm=' + encodeURIComponent(searchTerm);
+        }
     }
-    });
+});
+    searchBox.addEventListener('keyup', findMoviesSearchBar);
 
-function performSearch() {
-    const searchTerm = searchBox.value.trim();
-if (searchTerm) {
-    // Get the most recent searches from localStorage
-    let recentSearches = JSON.parse(localStorage.getItem('recentSearches')) || [];
 
-    // Add the new search term to the start of the array
-    recentSearches.unshift(searchTerm);
+function performSearchOnLoad() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const searchTerm = urlParams.get('searchTerm');
 
-    if (recentSearches.length > 10) {
-        recentSearches.pop();
-    }
-
-    // Store the updated array in localStorage
-    localStorage.setItem('recentSearches', JSON.stringify(recentSearches));
-
-    // Clear the search box
-    searchBox.innerHTML = '';
-
-    // If the current page is 'search.html', perform the search
-    if (window.location.href.includes('search.html')) {
-        loadMovies(searchTerm);
-    } else {
-        // If the current page is not 'search.html', redirect to the search results page
-        window.location.href = 'search.html';
+    if (searchTerm) {
+        updateRecentSearches(searchTerm);    
+        loadMovies(searchTerm);  
     }
 }
-}
+
 
 
 
@@ -73,14 +54,17 @@ if (searchTerm) {
 //#region Searchpage
 // Step 2. SEARCHPAGE //SKRIV IN SÖKTERM I MESSAGE
 
-async function loadMovies(searchTerm){
-    const searchResults = await searchForMoviesOmdb(searchTerm);
+async function loadMovies(searchTerm) {
     
-    if(searchResults && searchResults.length > 0){
+    const searchResults = await searchForMoviesOmdb(searchTerm);
+    console.log(searchResults);
+    
+    if (!searchResults)  {
+        document.getElementById('yoursearch').textContent = 'No results found for ' + searchTerm;
+    } else {
+       
         displayMovieList(searchResults);
-        
-    } 
-    if (!messageSearchResult) return; // If the element doesn't exist, do nothing
+    }
 }
 
 async function displayMovieList(movies){
@@ -224,7 +208,7 @@ function loadMovieDetails() {
 //#region Search bar
 async function loadMoviesSearchBar(searchTerm){
     const searchResults = await searchForMoviesOmdb(searchTerm);
-    
+    console.log(searchResults);
     displayMovieListSearchBar(searchResults);
 }
 
@@ -235,12 +219,13 @@ function findMoviesSearchBar(){
     if(searchTerm.length > 0){       
        searchList.classList.remove('hide-search-list');
         loadMoviesSearchBar(searchTerm);
+        console.log(searchTerm);
 
         sessionStorage.setItem('searchTerm', searchTerm);
     } else {       
             searchList.classList.add('hide-search-list');      
     }
-}
+} 
 
 function displayMovieListSearchBar(movies){
     searchList.innerHTML = "";
@@ -301,8 +286,34 @@ function loadMovieDetailsSearchBar() {
 //#endregion Search bar
 
 
+function updateRecentSearches(searchTerm) {
+    // Get the recent searches from localStorage
+    let recentSearches = JSON.parse(localStorage.getItem('recentSearches')) || [];
+
+    // Add the search term to the start of the recent searches array
+    recentSearches.unshift(searchTerm);
+
+    recentSearches = recentSearches.slice(0, 10);
 
 
+    // Store the updated recent searches array in localStorage
+    localStorage.setItem('recentSearches', JSON.stringify(recentSearches));
+
+    const container = document.getElementById('topp-today-search');
+
+    // Clear the container
+    container.innerHTML = '';
+    recentSearches = recentSearches.reverse(); 
+    // Iterate over the recent searches
+    recentSearches.forEach((searchTerm, index) => {
+       
+        const p = document.createElement('p');
+        const number = recentSearches.length - index;
+        p.innerHTML = `<span class="topp-search-number">${number}.</span> ${searchTerm} <span class="type"></span>`;
+        container.prepend(p);
+    });
+    document.getElementById('yoursearch').textContent = 'Your search: ' + searchTerm;
+}
 
 
 //#region Rating 
@@ -322,7 +333,7 @@ function rateMovie(imdbID, score) {
     .then(newAverageScore => {   
         const scoreElement = document.querySelector(`.result1[data-id="${imdbID}"] .cmdb-score`);
         if (scoreElement) {
-            scoreElement.textContent = `CMDB Score: ${newAverageScore.toFixed(2)}`;
+            scoreElement.textContent = `CMDB Score:  ${Math.round(newAverageScore)}`;
         }             
     })
         .catch((error) => {
@@ -339,6 +350,8 @@ function rateMovie(imdbID, score) {
 
 
 //#region functions to save, load and display movies
+
+
 function storeMovieData(movie) {
     // Store the movie object in local storage
     const movieString = JSON.stringify(movie);
@@ -360,3 +373,4 @@ function redirectToMovieDetails(imdbID) {
     window.location.href = url;
 }
 //#endregion
+
