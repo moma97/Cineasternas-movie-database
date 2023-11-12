@@ -2,14 +2,15 @@
 (interaktiva-ht23-cmdb-interaktiva23_g7 created by GitHub Classroom)
 This website fetch data from to API. Cmdb-Api (teachers own) and omdb-api (https://www.omdbapi.com/).
 It was a schoolproject to make a website with html, css and js.
-![Front page, newest review](https://github.com/moma97/Cineasternas-movie-database/assets/117289081/f68d7fa7-cc98-4719-8ce3-0841a10170c9)
+
+![Front page, newest review](https://github.com/moma97/Cineasternas-movie-database/assets/117289081/74f46af0-fe27-48fd-bc9a-0434e31dc175)
+
 
 ![Frontpage, Toplist top 3 movies](https://github.com/moma97/Cineasternas-movie-database/assets/117289081/29032114-7a3b-458c-a82b-3b1e513e5876)
 
+
 ![Frontpage, Toplist top 4-10](https://github.com/moma97/Cineasternas-movie-database/assets/117289081/34843792-d104-439e-bc35-3b6265eb428f)
 
-
-![bild](https://github.com/systemvetenskap/interaktiva-ht23-cmdb-interaktiva23_g7/assets/117045688/9008a039-cf36-4540-be2c-a8d90679079a)
 
 
 Search bar on every page, after each keypress the list updates the searchresults
