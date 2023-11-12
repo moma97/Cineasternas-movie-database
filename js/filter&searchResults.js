@@ -373,4 +373,3 @@ function redirectToMovieDetails(imdbID) {
     window.location.href = url;
 }
 //#endregion
-

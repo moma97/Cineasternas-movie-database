@@ -331,6 +331,9 @@ margin-left: 30px;
 width: 10%;
 }
 
+.movie-summary:hover{
+  cursor: pointer;
+}
 
 .to-movie-details{
 background-color: #EC953B;
@@ -350,6 +353,11 @@ position: relative;
 
 .to-movie-details:hover{
 background-color: #c06300;
+}
+
+.search-button {
+
+cursor: pointer;
 }
 
 #prevPage:hover, #nextPage:hover, #prevReviews:hover, #nextReviews:hover{
@@ -1347,6 +1355,8 @@ background-color: orange;
 right: 0;
 bottom: 3px;
 }
+
+
  
 
 .search-list{
@@ -1906,5 +1916,3 @@ margin-bottom: 10px;
 
 } 
 }
-
-
