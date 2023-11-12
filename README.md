@@ -9,7 +9,7 @@ It was a schoolproject to make a website with html, css and js.
 
 Search bar on every page, after each keypress the list updates the searchresults
 
-![Search bar 2](https://github.com/moma97/Cineasternas-movie-database/assets/117289081/4b0d3f3b-9db9-4edd-8326-71de1d3eb4de)           ![Search bar ](https://github.com/moma97/Cineasternas-movie-database/assets/117289081/a8ca8cdb-677f-4f7a-a5b4-768c2cd358a0)
+![Search bar 2](https://github.com/moma97/Cineasternas-movie-database/assets/117289081/4b0d3f3b-9db9-4edd-8326-71de1d3eb4de)                      ![Search bar ](https://github.com/moma97/Cineasternas-movie-database/assets/117289081/a8ca8cdb-677f-4f7a-a5b4-768c2cd358a0)
 
 
 
