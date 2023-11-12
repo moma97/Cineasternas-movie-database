@@ -19,6 +19,9 @@ Search bar on every page, after each keypress the list updates the searchresults
 
 
 
+![Search page](https://github.com/moma97/Cineasternas-movie-database/assets/117289081/2b2935a7-919b-4036-9630-ee7970b1686a)
+
+
 
 ![image](https://github.com/moma97/Cineasternas-movie-database/assets/117289081/cfd640a7-3089-40cd-8560-a67b17fdf0d9)
 
