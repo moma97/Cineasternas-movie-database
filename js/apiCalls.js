@@ -39,6 +39,13 @@ async function searchForMoviesOmdb(searchTerm) {
   return data.Search;
 }
 
+async function searchForMoviesOmdbFilter(searchTerm, runtime) {
+  const URL = `https://www.omdbapi.com/?s=${searchTerm}&page=${runtime}&apikey=163dfc00`;
+  const res = await fetch(`${URL}`);
+  const data = await res.json();
+  return data.Runtime;
+}
+
 async function getMovieOmdbFullPlot(imdbID){
   const response = await fetch(omdbURL + new URLSearchParams({
       i: `${imdbID}`,
@@ -205,5 +212,5 @@ async function getMoviesByGenre(searchTerm, genre) {
 //#endregion 
 
 
-export {getMoviesCmdb, scoreMovieWithReturn, getMovieOmdb, getMovieOmdbShortPlot, scoreMovie, getMovieOmdbFullPlot, latestReview, searchForMoviesOmdb, getMoviesCmdbPaging, cmdbScoreFilter, getMoviesByGenre, getMovieDetailsFromCMDB};
+export {getMoviesCmdb, searchForMoviesOmdbFilter,scoreMovieWithReturn, getMovieOmdb, getMovieOmdbShortPlot, scoreMovie, getMovieOmdbFullPlot, latestReview, searchForMoviesOmdb, getMoviesCmdbPaging, cmdbScoreFilter, getMoviesByGenre, getMovieDetailsFromCMDB};
 //#endregion
