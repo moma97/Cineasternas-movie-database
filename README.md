@@ -8,7 +8,9 @@ It was a schoolproject to make a website with html, css and js.
 
 
 Search bar on every page, after each keypress the list updates the searchresults
+
 ![image](https://github.com/moma97/Cineasternas-movie-database/assets/117289081/42190415-4cc5-4830-9ee4-d567a24d78d4)
+
 
 
 ![image](https://github.com/moma97/Cineasternas-movie-database/assets/117289081/cfd640a7-3089-40cd-8560-a67b17fdf0d9)
