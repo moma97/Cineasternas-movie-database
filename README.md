@@ -26,9 +26,6 @@ Search bar on every page, after each keypress the list updates the searchresults
 ![image](https://github.com/moma97/Cineasternas-movie-database/assets/117289081/cfd640a7-3089-40cd-8560-a67b17fdf0d9)
 
 
-![image](https://github.com/moma97/Cineasternas-movie-database/assets/117289081/c8915568-b633-4249-b2b2-da06af703540)
-
-
 Once you have pressed a rating, the Cmdb score updates and the rating options disappear:
 ![Movie voted](https://github.com/moma97/Cineasternas-movie-database/assets/117289081/16a579bf-3da8-4a7d-9109-746ff61e4605)
 
@@ -37,6 +34,9 @@ If you press on the movie, you come to the movie details page. If you voted on t
 
 On the movie details page, the rating is updated and matches the vote
 ![Cmdb rating movie details](https://github.com/moma97/Cineasternas-movie-database/assets/117289081/47e0ded7-6070-4d13-8302-444a865edd4e)
+
+Rated movies
+![image](https://github.com/moma97/Cineasternas-movie-database/assets/117289081/c8915568-b633-4249-b2b2-da06af703540)
 
 multiple votes
 ![Cmdb rating multiple votes](https://github.com/moma97/Cineasternas-movie-database/assets/117289081/78ba8864-323d-4009-bb90-8a34644e7f4d)
