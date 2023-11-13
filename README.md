@@ -21,6 +21,7 @@ Search bar on every page, after each keypress the list updates the searchresults
 
 ![Search page](https://github.com/moma97/Cineasternas-movie-database/assets/117289081/2b2935a7-919b-4036-9630-ee7970b1686a)
 
+![image](https://github.com/moma97/Cineasternas-movie-database/assets/117289081/c8915568-b633-4249-b2b2-da06af703540)
 
 
 ![image](https://github.com/moma97/Cineasternas-movie-database/assets/117289081/cfd640a7-3089-40cd-8560-a67b17fdf0d9)
@@ -36,7 +37,6 @@ On the movie details page, the rating is updated and matches the vote
 ![Cmdb rating movie details](https://github.com/moma97/Cineasternas-movie-database/assets/117289081/47e0ded7-6070-4d13-8302-444a865edd4e)
 
 Rated movies
-![image](https://github.com/moma97/Cineasternas-movie-database/assets/117289081/c8915568-b633-4249-b2b2-da06af703540)
 
 multiple votes
 ![Cmdb rating multiple votes](https://github.com/moma97/Cineasternas-movie-database/assets/117289081/78ba8864-323d-4009-bb90-8a34644e7f4d)
