@@ -1,7 +1,22 @@
 # Website for CMDb Film
-(interaktiva-ht23-cmdb-interaktiva23_g7 created by GitHub Classroom)
-This website fetch data from to API. Cmdb-Api (teachers own) and omdb-api (https://www.omdbapi.com/).
-It was a schoolproject to make a website with html, css and js.
+
+A website for movie enthusiasts to review, rate and find new movies
+
+
+
+
+https://github.com/moma97/Website-Movie-Database/assets/117289081/cc116e50-81cf-45e2-a0c8-8dca373254bb
+
+
+
+
+
+
+
+
+
+
+
 
 ![Front page, newest review](https://github.com/moma97/Cineasternas-movie-database/assets/117289081/74f46af0-fe27-48fd-bc9a-0434e31dc175)
 
